@@ -19,7 +19,6 @@ Table of Contents
 * [Methods](#methods)
     * [fromName](#fromname)
     * [tryFromName](#tryfromname)
-    * [fromRequest](#fromrequest)
     * [rule](#rule)
     * [count](#count)
     * [collect](#collect)
@@ -119,16 +118,6 @@ Returns the enum case from the enum name. When the name is missing or is invalid
 Status::tryFromName('Published'); // Status::Published
 
 Status::tryFromName('invalid'); // null
-```
-
-### fromRequest
-
-Returns the enum case from the request, when is a valid value. Optionally, you can provide a default value and use that instead of `null`.
-
-```php
-Status::fromRequest('status'); // self|null
-
-Status::fromRequest('status', default: Status::Draft); // self
 ```
 
 ### rule
