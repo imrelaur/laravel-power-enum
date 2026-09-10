@@ -7,8 +7,6 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Enum;
 use ValueError;
 
-use function request;
-
 trait PowerEnum
 {
     /**
@@ -36,15 +34,6 @@ trait PowerEnum
         }
 
         return $result;
-    }
-
-    /**
-     * Returns the enum case from the request.
-     * Optionally, you can provide a default enum case.
-     */
-    public static function fromRequest(string $key, ?self $default = null): ?static
-    {
-        return request()->enum($key, static::class) ?? $default;
     }
 
     /**
